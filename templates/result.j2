@@ -1,0 +1,24 @@
+{% extends "temp1.j2" %}
+{% block content %}
+            <section>
+                <h1>תוצאות עבור {{city}}:</h1>
+                <div id="results">
+                    {%for day in forecast %}
+                        <div class="result">
+                            <div class="img-wrapper">
+                                <img src="https://www.weatherbit.io/static/img/icons/{{day.icon}}.png" alt="weather icon"/>
+                            </div>
+                            <p>{{day.weather}}</p>
+                        <p>טמפ מינימלית {{day.mint}}°</p>
+                        <p>טמפ מקסימלית {{day.maxt}}°</p>
+                        <hr>
+                        <p>{{day.date}}</p>
+                        <p>{{day.day_name}}</p>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </section>
+       </html>
+
+{% endblock content %}
